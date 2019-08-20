@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./style.css" type="text/css">
+  <title>Document</title>
+</head>
+<body>
+    <div class="panels">
+        <div class="panel panel1">
+          <p>Hey</p>
+          <p>Let's</p>
+          <p>Dab</p>
+        </div>
+        <div class="panel panel2">
+          <p>I</p>
+          <p>Want</p>
+          <p>That</p>
+        </div>
+        <div class="panel panel3">
+          <p>Experience</p>
+          <p>It</p>
+          <p>Today</p>
+        </div>
+        <div class="panel panel4">
+          <p>Work</p>
+          <p>Harder</p>
+          <p>EveryDay</p>
+        </div>
+        <div class="panel panel5">
+          <p>Life</p>
+          <p>In</p>
+          <p>Motion</p>
+        </div>
+      </div>
+
+    <script>
+      const panels = document.querySelectorAll('.panel');
+      function toggleOpen(){
+        // console.log('Hello');
+        this.classList.toggle('open');
+        // console.log(tog);
+      }
+
+      function transitionend(e){
+        if (e.propertyName.includes('flex')){
+          this.classList.toggle('open-active');
+        }
+        // console.log(e.propertyName);
+      }
+
+    panels.forEach(panel => panel.addEventListener('click', toggleOpen));
+    panels.forEach(panel => panel.addEventListener('transitionend', transitionend));
+
+    </script>
+</body>
+</html>
